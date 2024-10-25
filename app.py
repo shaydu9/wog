@@ -6,6 +6,8 @@ from memory_game import play_memory_game
 
 TYPE_DIFFICULTY = 10
 TYPE_GAME = 3
+
+
 class GameCodes:
     GAME_MEMORY = 1
     GAME_GUESS = 2
@@ -29,7 +31,7 @@ def check_validity(top_range) -> int:
         except ValueError:
             print('Please enter only numbers.')
             continue
-        if result not in range(1, top_range):
+        if result not in range(1, top_range + 1):
             print(user_range)
         else:
             return result
@@ -45,7 +47,7 @@ def start_play():
 
     chosen_game = check_validity(TYPE_GAME)
     difficulty_level = check_validity(TYPE_DIFFICULTY)
-    print(f'You have chosen {games[chosen_game]}, with difficulty level of: {difficulty_level}\nLoading game...')
+    print(f'You have chosen {games[chosen_game - 1]}, with difficulty level of: {difficulty_level}\nLoading game...')
     sleep(2)
     match chosen_game:
         case GameCodes.GAME_MEMORY:
@@ -56,4 +58,3 @@ def start_play():
             play_currency(difficulty_level)
         case _:
             return
-
