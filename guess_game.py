@@ -1,4 +1,10 @@
 import random
+import app
+
+
+
+
+# from helper import play_again
 
 
 def generate_number(difficulty: int) -> int:
@@ -28,4 +34,4 @@ def play_guess_game(difficulty):
     guess_num = get_guess_from_user(difficulty)
     print(f'The secret number is: {secret_number}, you guessed: {guess_num}\n'
           f'Your guess is: {compare_results(guess_num, secret_number)}')
-
+    app.play_again()

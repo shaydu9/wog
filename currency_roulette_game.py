@@ -3,6 +3,11 @@ import random
 
 from currency_converter import CurrencyConverter
 
+import app
+
+
+# from helper import play_again
+
 
 def get_money_interval(usd: int) -> int:
     return int(CurrencyConverter().convert(usd, 'USD', 'ILS'))
@@ -23,5 +28,6 @@ def play_currency(difficulty):
     result = get_money_interval(rand_usd)
     print(f'{rand_usd}$ converted to ILS is: {result}₪.\n'
           f'Your guess ({guess})₪ is {compare_results(result, guess, difficulty)}')
+    app.play_again()
 
 

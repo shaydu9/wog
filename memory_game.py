@@ -2,7 +2,10 @@ import random
 import os
 from time import sleep
 
-import clear
+import app
+
+
+# from helper import play_again
 
 
 def generate_sequence(length: int):
@@ -26,4 +29,5 @@ def play_memory_game(difficulty: int):
     guessed_list = get_list_from_user(difficulty)
     print(f'You guessed: {guessed_list}, generated list was: {generated_list}.\n'
           f'Your guess is {is_list_equal(generated_list, guessed_list)}')
+    app.play_again()
 

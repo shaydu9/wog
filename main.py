@@ -1,5 +1,5 @@
-from app import welcome, start_play
 from app import start_play
+from app import welcome
 
 welcome()
 start_play()

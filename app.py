@@ -58,3 +58,10 @@ def start_play():
             play_currency(difficulty_level)
         case _:
             return
+
+
+def play_again():
+    if int(input('Would you like to play again?\n1: Yes\n2: No\n')) == 1:
+        start_play()
+    else:
+        return
